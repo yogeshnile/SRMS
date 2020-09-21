@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,11 +50,7 @@
 
                     <section class="section" id="exampl">
                         <div class="container-fluid">
-
                             <div class="row">
-
-
-
                                 <div class="col-md-8 col-md-offset-2">
                                     <div class="panel">
                                         <div class="panel-heading">
@@ -61,9 +58,9 @@
                                                 <h3 align="center">Student Result Details</h3>
                                                 <hr />
 
-                                                <p><b>Student Name : </b>{{ result.st_name }}</p>
-                                                <p><b>Student Roll No :</b> {{ result.roll_no }}
-                                                <p><b>Student Enrollment No:</b> {{ result.enrollment_no }}
+                                                <p><b>Student Name : </b>{{ sub.student_name }}</p>
+                                                <p><b>Student Roll No :</b> {{ sub.roll_no }}
+                                                <p><b>Student Enrollment No:</b> {{ sub.enrollment_no }}
 
                                             </div>
 
@@ -81,51 +78,53 @@
                                                         <!-- ====================1st Subject =====================-->
                                                         <tr>
                                                             <th scope="row" style="text-align: center">1</th>
-                                                            <td style="text-align: center">{{ sub.sub1 }}</td>
-                                                            <td style="text-align: center">{% if result.sub1 < 35 %}<b
-                                                                    style="color: red;">{{ result.sub1 }}</b>{% else %}{{ result.sub1 }}{% endif %}
+                                                            <td style="text-align: center">{{ sub.semester.sub_1 }}</td>
+                                                            <td style="text-align: center">{% if sub.sub_1 < 35 %}<b
+                                                                    style="color: red;">{{ sub.sub_1 }}</b>{% else %}{{ sub.sub_1 }}{% endif %}
                                                             </td>
                                                         </tr>
                                                         <!-- ====================2nd Subject =====================-->
                                                         <tr>
                                                             <th scope="row" style="text-align: center">2</th>
-                                                            <td style="text-align: center">{{ sub.sub2 }}</td>
-                                                            <td style="text-align: center">{% if result.sub2 < 35 %}<b
-                                                                    style="color: red;">{{ result.sub2 }}</b>{% else %}{{ result.sub2 }}{% endif %}
+                                                            <td style="text-align: center">{{ sub.semester.sub_2 }}</td>
+                                                            <td style="text-align: center">{% if sub.sub_2 < 35 %}<b
+                                                                    style="color: red;">{{ sub.sub_2 }}</b>{% else %}{{ sub.sub_2 }}{% endif %}
                                                             </td>
                                                         </tr>
                                                         <!-- ====================3rd Subject =====================-->
                                                         <tr>
                                                             <th scope="row" style="text-align: center">3</th>
-                                                            <td style="text-align: center">{{ sub.sub3 }}</td>
-                                                            <td style="text-align: center">{% if result.sub3 < 35 %}<b
-                                                                    style="color: red;">{{ result.sub3 }}</b>{% else %}{{ result.sub3 }}{% endif %}
+                                                            <td style="text-align: center">{{ sub.semester.sub_3 }}</td>
+                                                            <td style="text-align: center">{% if sub.sub_3 < 35 %}<b
+                                                                    style="color: red;">{{ sub.sub_3 }}</b>{% else %}{{ sub.sub_3 }}{% endif %}
                                                             </td>
                                                         </tr>
                                                         <!-- ====================4th Subject =====================-->
                                                         <tr>
                                                             <th scope="row" style="text-align: center">4</th>
-                                                            <td style="text-align: center">{{ sub.sub4 }}</td>
-                                                            <td style="text-align: center">{% if result.sub4 < 35 %}<b
-                                                                    style="color: red;">{{ result.sub4 }}</b>{% else %}{{ result.sub4 }}{% endif %}
+                                                            <td style="text-align: center">{{ sub.semester.sub_4 }}</td>
+                                                            <td style="text-align: center">{% if sub.sub_4 < 35 %}<b
+                                                                    style="color: red;">{{ sub.sub_4 }}</b>{% else %}{{ sub.sub_4 }}{% endif %}
                                                             </td>
                                                         </tr>
+                                                        {% if sub.semester.sno != 6 %}
                                                         <!-- ====================5th Subject =====================-->
                                                         <tr>
                                                             <th scope="row" style="text-align: center">5</th>
-                                                            <td style="text-align: center">{{ sub.sub5 }}</td>
-                                                            <td style="text-align: center">{% if result.sub5 < 35 %}<b
-                                                                    style="color: red;">{{ result.sub5 }}</b>{% else %}{{ result.sub5 }}{% endif %}
+                                                            <td style="text-align: center">{{ sub.semester.sub_5 }}</td>
+                                                            <td style="text-align: center">{% if sub.sub_5 < 35 %}<b
+                                                                    style="color: red;">{{ sub.sub_5 }}</b>{% else %}{{ sub.sub_5 }}{% endif %}
                                                             </td>
                                                         </tr>
                                                         <!-- ====================6th Subject =====================-->
                                                         <tr>
                                                             <th scope="row" style="text-align: center">6</th>
-                                                            <td style="text-align: center">{{ sub.sub6 }}</td>
-                                                            <td style="text-align: center">{% if result.sub6 < 35 %}<b
-                                                                    style="color: red;">{{ result.sub6 }}</b>{% else %}{{ result.sub6 }}{% endif %}
+                                                            <td style="text-align: center">{{ sub.semester.sub_6 }}</td>
+                                                            <td style="text-align: center">{% if sub.sub_6 < 35 %}<b
+                                                                    style="color: red;">{{ sub.sub_6 }}</b>{% else %}{{ sub.sub_6 }}{% endif %}
                                                             </td>
                                                         </tr>
+                                                        {% endif %}
                                                         <!-- ====================Subject End =====================-->
 
                                                         <tr>
@@ -181,19 +180,14 @@
                             <!-- /.container-fluid -->
                     </section>
                     <!-- /.section -->
-
                 </div>
                 <!-- /.main-page -->
-
-
             </div>
             <!-- /.content-container -->
         </div>
         <!-- /.content-wrapper -->
-
     </div>
     <!-- /.main-wrapper -->
-
     <!-- ========== COMMON JS FILES ========== -->
     <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
     <!--===============================================================================================-->
@@ -205,20 +199,15 @@
     <!--===============================================================================================-->
     <script src="{% static 'js/iscroll/iscroll.js' %}"></script>
     <!--===============================================================================================-->
-
     <!-- ========== PAGE JS FILES ========== -->
     <script src="{% static 'js/prism/prism.js' %}"></script>
-
     <!-- ========== THEME JS ========== -->
     <script src="{% static 'js/main2.js' %}"></script>
-
     <!--============================= Page print script===================================-->
     <script>
         $(function ($) {
 
         });
-
-
         function CallPrint(strid) {
             var prtContent = document.getElementById("exampl");
             var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
