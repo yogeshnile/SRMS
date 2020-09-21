@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--===============================================================================================-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{% static 'images/icons/index.ico' %}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" media="screen">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" media="screen">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="{% static 'css/animate-css/animate.min.css' %}" media="screen">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="{% static 'css/lobipanel/lobipanel.min.css' %}" media="screen">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="{% static 'css/prism/prism.css' %}" media="screen">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="{% static 'css/main2.css' %}" media="screen">
+    <!--===============================================================================================-->
+    <script src="{% static 'js/modernizr/modernizr.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <title>Student Result || Yogesh Nile</title>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="content-container">
+
+
+                <!-- /.left-sidebar -->
+
+                <div class="main-page">
+                    <div class="container-fluid">
+                        <div class="row page-title-div">
+                            <div class="col-md-12">
+                                <h2 class="title" align="center">Vimal Tormal Poddar BCA College, Pandesara Surat</h2>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container-fluid -->
+
+                    <section class="section" id="exampl">
+                        <div class="container-fluid">
+
+                            <div class="row">
+
+
+
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="panel">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                <h3 align="center">Student Result Details</h3>
+                                                <hr />
+
+                                                <p><b>Student Name : </b>{{ result.st_name }}</p>
+                                                <p><b>Student Roll No :</b> {{ result.roll_no }}
+                                                <p><b>Student Enrollment No:</b> {{ result.enrollment_no }}
+
+                                            </div>
+
+                                            <div class="panel-body p-20">
+                                                <table class="table table-hover table-bordered" border="1" width="100%">
+                                                    <thead>
+                                                        <tr style="text-align: center">
+                                                            <th style="text-align: center">#</th>
+                                                            <th style="text-align: center"> Subject</th>
+                                                            <th style="text-align: center">Marks</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <!-- ====================1st Subject =====================-->
+                                                        <tr>
+                                                            <th scope="row" style="text-align: center">1</th>
+                                                            <td style="text-align: center">{{ sub.sub1 }}</td>
+                                                            <td style="text-align: center">{% if result.sub1 < 35 %}<b
+                                                                    style="color: red;">{{ result.sub1 }}</b>{% else %}{{ result.sub1 }}{% endif %}
+                                                            </td>
+                                                        </tr>
+                                                        <!-- ====================2nd Subject =====================-->
+                                                        <tr>
+                                                            <th scope="row" style="text-align: center">2</th>
+                                                            <td style="text-align: center">{{ sub.sub2 }}</td>
+                                                            <td style="text-align: center">{% if result.sub2 < 35 %}<b
+                                                                    style="color: red;">{{ result.sub2 }}</b>{% else %}{{ result.sub2 }}{% endif %}
+                                                            </td>
+                                                        </tr>
+                                                        <!-- ====================3rd Subject =====================-->
+                                                        <tr>
+                                                            <th scope="row" style="text-align: center">3</th>
+                                                            <td style="text-align: center">{{ sub.sub3 }}</td>
+                                                            <td style="text-align: center">{% if result.sub3 < 35 %}<b
+                                                                    style="color: red;">{{ result.sub3 }}</b>{% else %}{{ result.sub3 }}{% endif %}
+                                                            </td>
+                                                        </tr>
+                                                        <!-- ====================4th Subject =====================-->
+                                                        <tr>
+                                                            <th scope="row" style="text-align: center">4</th>
+                                                            <td style="text-align: center">{{ sub.sub4 }}</td>
+                                                            <td style="text-align: center">{% if result.sub4 < 35 %}<b
+                                                                    style="color: red;">{{ result.sub4 }}</b>{% else %}{{ result.sub4 }}{% endif %}
+                                                            </td>
+                                                        </tr>
+                                                        <!-- ====================5th Subject =====================-->
+                                                        <tr>
+                                                            <th scope="row" style="text-align: center">5</th>
+                                                            <td style="text-align: center">{{ sub.sub5 }}</td>
+                                                            <td style="text-align: center">{% if result.sub5 < 35 %}<b
+                                                                    style="color: red;">{{ result.sub5 }}</b>{% else %}{{ result.sub5 }}{% endif %}
+                                                            </td>
+                                                        </tr>
+                                                        <!-- ====================6th Subject =====================-->
+                                                        <tr>
+                                                            <th scope="row" style="text-align: center">6</th>
+                                                            <td style="text-align: center">{{ sub.sub6 }}</td>
+                                                            <td style="text-align: center">{% if result.sub6 < 35 %}<b
+                                                                    style="color: red;">{{ result.sub6 }}</b>{% else %}{{ result.sub6 }}{% endif %}
+                                                            </td>
+                                                        </tr>
+                                                        <!-- ====================Subject End =====================-->
+
+                                                        <tr>
+                                                            <th scope="row" colspan="2" style="text-align: center">Total
+                                                                Marks</th>
+                                                            <td style="text-align: center"><b>{{ total }}</b> out of
+                                                                <b>700</b></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row" colspan="2" style="text-align: center">
+                                                                Percntage</th>
+                                                            <td style="text-align: center"><b>{{ grade }}</b></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row" colspan="2" style="text-align: center">
+                                                                Result</th>
+                                                            <td style="text-align: center">
+                                                                {% if student_result == "FAIL" %}<b
+                                                                    style="color: red;">{{ student_result }}</b>{% else %}<b
+                                                                    style="color: green;">{{ student_result }}</b>{% endif %}
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td colspan="3" align="center"><b aria-hidden="true"
+                                                                    style="cursor:pointer; font-size: 20px;"
+                                                                    OnClick="CallPrint(this.value)">Print</b></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                        <!-- /.panel -->
+                                    </div>
+                                    <!-- /.col-md-6 -->
+
+                                    <div class="form-group">
+
+                                        <div class="col-sm-6">
+                                            <a href="/">&#8617; Back to Home</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- /.row -->
+
+                            </div>
+                            <!-- /.container-fluid -->
+                    </section>
+                    <!-- /.section -->
+
+                </div>
+                <!-- /.main-page -->
+
+
+            </div>
+            <!-- /.content-container -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /.main-wrapper -->
+
+    <!-- ========== COMMON JS FILES ========== -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'js/pace/pace.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'js/lobipanel/lobipanel.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'js/iscroll/iscroll.js' %}"></script>
+    <!--===============================================================================================-->
+
+    <!-- ========== PAGE JS FILES ========== -->
+    <script src="{% static 'js/prism/prism.js' %}"></script>
+
+    <!-- ========== THEME JS ========== -->
+    <script src="{% static 'js/main2.js' %}"></script>
+
+    <!--============================= Page print script===================================-->
+    <script>
+        $(function ($) {
+
+        });
+
+
+        function CallPrint(strid) {
+            var prtContent = document.getElementById("exampl");
+            var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+            WinPrint.document.write(prtContent.innerHTML);
+            WinPrint.document.close();
+            WinPrint.focus();
+            WinPrint.print();
+            WinPrint.close();
+        }
+    </script>
+    <!--============================= Page print script end =========================================-->
+
+    </script>
+
+    <!-- ========== ADD custom.js FILE BELOW WITH YOUR CHANGES ========== -->
+
+</body>
+
+</html>
