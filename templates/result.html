@@ -95,8 +95,11 @@
                                                         <tr>
                                                             <th scope="row" style="text-align: center">3</th>
                                                             <td style="text-align: center">{{ sub.semester.sub_3 }}</td>
-                                                            <td style="text-align: center">{% if sub.sub_3 < 35 %}<b
-                                                                    style="color: red;">{{ sub.sub_3 }}</b>{% else %}{{ sub.sub_3 }}{% endif %}
+                                                            <td style="text-align: center">{% if sub.semester.sno != 6 %}
+                                                                        {% if sub.sub_3 < 35 %}<b style="color: red;">
+                                                                        {{ sub.sub_3 }}</b>{% else %}{{ sub.sub_3 }}{% endif %}
+                                                                        {% else %}{% if sub.sub_3 < 150 %}<b style="color: red;">
+                                                                        {{ sub.sub_3 }}</b>{% else %}{{ sub.sub_3 }}{% endif %}{% endif %}
                                                             </td>
                                                         </tr>
                                                         <!-- ====================4th Subject =====================-->
@@ -120,7 +123,7 @@
                                                         <tr>
                                                             <th scope="row" style="text-align: center">6</th>
                                                             <td style="text-align: center">{{ sub.semester.sub_6 }}</td>
-                                                            <td style="text-align: center">{% if sub.sub_6 < 35 %}<b
+                                                            <td style="text-align: center">{% if sub.sub_6 < 70 %}<b
                                                                     style="color: red;">{{ sub.sub_6 }}</b>{% else %}{{ sub.sub_6 }}{% endif %}
                                                             </td>
                                                         </tr>
