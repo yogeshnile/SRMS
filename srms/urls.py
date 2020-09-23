@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 admin.site.site_header = "VTP BCA Admin"
 admin.site.site_title = "VTP Admin Panel"
@@ -25,3 +27,5 @@ urlpatterns = [
     path('', include("student.urls")),
     path('dashboard/', include("professor.urls")),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

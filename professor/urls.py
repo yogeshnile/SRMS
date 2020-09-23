@@ -6,5 +6,5 @@ urlpatterns = [
     path('login', views.handellogin, name='handellogin'),
     path('', views.dashboard, name='dashboard'),
     path('logout', views.handellogout, name='handellogout'),
-    path('result-upload', views.resultupload, name='resultupload'),
+    # path('result-upload', views.resultupload, name='resultupload'),
 ]

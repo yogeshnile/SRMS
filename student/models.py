@@ -54,3 +54,12 @@ class third_year(models.Model):
 
     def __str__(self):
         return str(self.roll_no) + " " + self.student_name
+
+
+class Csv(models.Model):
+    file_name = models.FileField(upload_to='student')
+    uploaded = models.DateTimeField(default=now, blank=True)
+    activated = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"file id: {self.id}"
