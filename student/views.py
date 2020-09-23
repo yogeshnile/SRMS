@@ -65,6 +65,3 @@ def result(request):
         return render(request, 'result.html', context)
 
     return redirect('home')
-
-def login(request):
-    return render(request, 'login.html')
