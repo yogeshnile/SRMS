@@ -28,7 +28,7 @@ def dashboard(request):
                     rollno = int(row[0])
                     studentName = row[1].upper()
                     enNo = row[2]
-                    sem = subject.objects.get(semester=int(row[3]))
+                    sem = subject.objects.get(semester=row[3])
                     sub1 = int(row[4])
                     sub2 = int(row[5])
                     sub3 = int(row[6])
@@ -36,11 +36,24 @@ def dashboard(request):
                     sub5 = int(row[8])
                     sub6 = int(row[9])
 
-                    first_year.objects.create(roll_no=rollno, student_name=studentName, enrollment_no=enNo,
-                    semester=sem, sub_1=sub1, sub_2=sub2, sub_3=sub3, sub_4=sub4, sub_5=sub5, sub_6=sub6)
+                    if sem.semester == 1 or sem.semester == 2:
+                        if i == 1:
+                            first_year.objects.all().delete()
+                        first_year.objects.create(roll_no=rollno, student_name=studentName, enrollment_no=enNo,
+                        semester=sem, sub_1=sub1, sub_2=sub2, sub_3=sub3, sub_4=sub4, sub_5=sub5, sub_6=sub6)
+                    elif sem.semester == 3 or sem.semester == 4:
+                        if i == 1:
+                            second_year.objects.all().delete()
+                        second_year.objects.create(roll_no=rollno, student_name=studentName, enrollment_no=enNo,
+                        semester=sem, sub_1=sub1, sub_2=sub2, sub_3=sub3, sub_4=sub4, sub_5=sub5, sub_6=sub6)
+                    elif semsemester == 5 or sem.semester == 6:
+                        if i == 1:
+                            third_year.objects.all().delete()
+                        third_year.objects.create(roll_no=rollno, student_name=studentName, enrollment_no=enNo,
+                        semester=sem, sub_1=sub1, sub_2=sub2, sub_3=sub3, sub_4=sub4, sub_5=sub5, sub_6=sub6)
 
-                obj.activated = True
-                obj.save()
+            obj.activated = True
+            obj.save()
 
         return render(request, 'dashboard.html', {'form':form})
     else:
