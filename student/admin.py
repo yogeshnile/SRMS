@@ -24,6 +24,7 @@ class FirstAdmin(admin.ModelAdmin):
         'student_name',
         'enrollment_no',
     )
+    list_per_page = 50
 
 admin.site.register(first_year, FirstAdmin)
 admin.site.register(second_year, FirstAdmin)
