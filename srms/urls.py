@@ -18,9 +18,6 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-admin.site.site_header = "VTP BCA Admin"
-admin.site.site_title = "VTP Admin Panel"
-admin.site.index_title = "Welcome to VTP BCA Admin Panel"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
