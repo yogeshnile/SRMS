@@ -1,4 +1,4 @@
-"roll_no","st_name","enrollment_no","semester","sub1","sub2","sub3","sub4","sub5","sub6","date"
+"roll_no","student_name","enrollment_no","semester","sub_1","sub_2","sub_3","sub_4","sub_5","sub_6","date"
 "1",". STANLY MATHUKUTTY","E201821518901","1","48","18","58","38","22","130","2020-06-20 13:40:43"
 "2","ANKAM SNEHALATA SRINIVAS","E201821518902","2","68","48","70","82","52","152","2020-06-20 13:40:43"
 "3","ANURAGI SUNIL KAMLESH","E201821518903","1","88","72","76","94","76","184","2020-06-20 13:40:43"
