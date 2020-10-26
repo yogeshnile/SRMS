@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import first_year, second_year, third_year, Csv
+from .models import first_year, second_year, third_year
 from .resources import FirstResource, SecoundResource, ThirdResource
 from import_export.admin import ImportExportModelAdmin
 
@@ -10,7 +10,7 @@ class FirstAdmin(ImportExportModelAdmin):
     list_display = ('roll_no','student_name','enrollment_no','semester','sub_1','sub_2','sub_3',
         'sub_4','sub_5','sub_6','total_marks','percentage','result')
     list_display_links = ('roll_no','student_name',)
-    readonly_fields  = ('percentage','total_marks','result')
+    readonly_fields  = ('percentage','total_marks','result','timeStamp')
     search_fields = ('roll_no','student_name','enrollment_no')
     list_filter = ('result',)
     list_per_page = 50
@@ -21,7 +21,7 @@ class SecoundAdmin(ImportExportModelAdmin):
     list_display = ('roll_no','student_name','enrollment_no','semester','sub_1','sub_2','sub_3',
         'sub_4','sub_5','sub_6','total_marks','percentage','result')
     list_display_links = ('roll_no','student_name',)
-    readonly_fields  = ('percentage','total_marks','result')
+    readonly_fields  = ('percentage','total_marks','result','timeStamp')
     search_fields = ('roll_no','student_name','enrollment_no')
     list_filter = ('result',)
     list_per_page = 50
@@ -32,9 +32,8 @@ class ThirdAdmin(ImportExportModelAdmin):
     list_display = ('roll_no','student_name','enrollment_no','semester','sub_1','sub_2','sub_3',
         'sub_4','sub_5','sub_6','total_marks','percentage','result')
     list_display_links = ('roll_no','student_name',)
-    readonly_fields  = ('percentage','total_marks','result')
+    readonly_fields  = ('percentage','total_marks','result','timeStamp')
     search_fields = ('roll_no','student_name','enrollment_no')
     list_filter = ('result',)
     list_per_page = 50
     
-admin.site.register(Csv)
