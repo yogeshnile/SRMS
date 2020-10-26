@@ -11,7 +11,7 @@ class FirstAdmin(ImportExportModelAdmin):
         'sub_4','sub_5','sub_6','total_marks','percentage','result')
     list_display_links = ('roll_no','student_name',)
     readonly_fields  = ('percentage','total_marks','result','timeStamp')
-    search_fields = ('roll_no','student_name','enrollment_no')
+    search_fields = ('roll_no','student_name',)
     list_filter = ('result',)
     list_per_page = 50
 
@@ -22,7 +22,7 @@ class SecoundAdmin(ImportExportModelAdmin):
         'sub_4','sub_5','sub_6','total_marks','percentage','result')
     list_display_links = ('roll_no','student_name',)
     readonly_fields  = ('percentage','total_marks','result','timeStamp')
-    search_fields = ('roll_no','student_name','enrollment_no')
+    search_fields = ('roll_no','student_name',)
     list_filter = ('result',)
     list_per_page = 50
 
@@ -33,7 +33,7 @@ class ThirdAdmin(ImportExportModelAdmin):
         'sub_4','sub_5','sub_6','total_marks','percentage','result')
     list_display_links = ('roll_no','student_name',)
     readonly_fields  = ('percentage','total_marks','result','timeStamp')
-    search_fields = ('roll_no','student_name','enrollment_no')
+    search_fields = ('roll_no','student_name',)
     list_filter = ('result',)
     list_per_page = 50
     
