@@ -133,23 +133,23 @@
                                                         <tr>
                                                             <th scope="row" colspan="2" style="text-align: center">Total
                                                                 Marks</th>
-                                                            <td style="text-align: center"><b>{{ total }}</b> out of
+                                                            <td style="text-align: center"><b>{{ sub.total_marks }}</b> out of
                                                                 <b>700</b></td>
                                                         </tr>
 
                                                         <tr>
                                                             <th scope="row" colspan="2" style="text-align: center">
-                                                                Percntage</th>
-                                                            <td style="text-align: center"><b>{{ grade }}</b></td>
+                                                                Percentage</th>
+                                                            <td style="text-align: center"><b>{{ sub.percentage }}</b></td>
                                                         </tr>
 
                                                         <tr>
                                                             <th scope="row" colspan="2" style="text-align: center">
                                                                 Result</th>
                                                             <td style="text-align: center">
-                                                                {% if student_result == "FAIL" %}<b
-                                                                    style="color: red;">{{ student_result }}</b>{% else %}<b
-                                                                    style="color: green;">{{ student_result }}</b>{% endif %}
+                                                                {% if sub.result == "FAIL" %}<b
+                                                                    style="color: red;">{{ sub.result }}</b>{% else %}<b
+                                                                    style="color: green;">{{ sub.result }}</b>{% endif %}
                                                             </td>
                                                         </tr>
 
